@@ -1,6 +1,7 @@
 Cookbook using OpenAi with LangChain
 Goal: Create a virtual helper for steps to make a dish and create a menu through out the day
-
+      Get LangChain to work with Visual Studio Code
+Other: use  python -m cookbook.main to compile
 Progress:
 Initial Step 
 
