@@ -29,3 +29,12 @@ dish_prompt = PromptTemplate(
 
 dish_response = llm.invoke(dish_prompt.format(ingredients=ingredients_response))
 print("\n\nRecipe:", dish_response)
+
+
+from langchain.chains import SimpleSequentialChain, LLMChain
+
+ingredient_chain = LLMChain(llm=llm, prompt=ingredient_prompt)
+dish_chain = LLMChain(llm=llm, prompt=dish_prompt)
+
+chain = SimpleSequentialChain(chains=[ingredient_chain, dish_chain])
+print(chain.run(cuisine=cuisine))
